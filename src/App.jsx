@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 function Home() {
   return (
     <div style={{ padding: 20 }}>
@@ -28,18 +28,19 @@ function NoMatch() {
 
 export default function App() {
   return (
-    <>
-      <div>
-        <Link to="/">Home </Link>
-        <Link to="/qw"> About</Link>
-        <Link to="/00000000000000000000000000"> Failed</Link>
-      </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/qw" element={<About />} />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
-
-    </>
+    <Router>
+      <>
+        <div>
+          <Link to="/">Home </Link>
+          <Link to="/qw"> About</Link>
+          <Link to="/00000000000000000000000000"> Failed</Link>
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/qw" element={<About />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+      </>
+    </Router>
   )
 }
