@@ -1,5 +1,3 @@
-// import App2 from "./App2"
-// import App3 from "./App3"
 import { Routes, Route, Link } from "react-router-dom"
 function Home() {
   return (
