@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
+
 function Home() {
   return (
     <div style={{ padding: 20 }}>
@@ -31,16 +32,18 @@ export default function App() {
     <Router>
       <>
         <div>
-          <Link to="/">Home </Link>
-          <Link to="/qw"> About</Link>
-          <Link to="/00000000000000000000000000"> Failed</Link>
+          <Link to="/">Home</Link>
+          <Link to="/qw">About</Link>
+          <Link to="/00000000000000000000000000">Failed</Link>
         </div>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/qw" element={<About />} />
-          <Route path="*" element={<NoMatch />} />
+          <Route path="/" element={<Outlet />}>
+            <Route index element={<Home />} />
+            <Route path="/qw" element={<About />} />
+            <Route path="*" element={<NoMatch />} />
+          </Route>
         </Routes>
       </>
     </Router>
-  )
+  );
 }
