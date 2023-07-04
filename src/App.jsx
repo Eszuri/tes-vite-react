@@ -35,6 +35,7 @@ export default function App() {
           <Link to="/">Home</Link>
           <Link to="/qw">About</Link>
           <Link to="/00000000000000000000000000">Failed</Link>
+           <h1>{import.meta.env.VITE_TES_NAMA}</h1>
         </div>
         <Routes>
           <Route path="/" element={<Outlet />}>
